@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.10.1 on win32)" generated="20231212 15:53:15.270" rpa="false" schemaversion="2">
+<suite id="s1" name="testDemo2" source="C:\Users\Aisha\PycharmProjects\pythonProject\AutomatingLuma\testDemo2.robot">
+<test id="s1-t1" name="Open Luma Website">
+<kw name="Open Luma home page" library="resources" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231212 15:53:15.695" level="INFO">Opening browser 'chrome' to base url 'https://luma.enablementadobe.com/content/luma/us/en.html'.</msg>
+<status status="PASS" starttime="20231212 15:53:15.695" endtime="20231212 15:53:28.689"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.5</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20231212 15:53:28.689" endtime="20231212 15:53:28.689"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231212 15:53:28.690" endtime="20231212 15:53:29.487"/>
+</kw>
+<status status="PASS" starttime="20231212 15:53:15.694" endtime="20231212 15:53:29.488"/>
+</kw>
+<kw name="Validate unsuccessful Login">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath:/html/body/div[1]/div/div/div[1]/div/div[1]/div/ul[2]/li[2]/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231212 15:53:29.491" level="INFO">Clicking element 'xpath:/html/body/div[1]/div/div/div[1]/div/div[1]/div/ul[2]/li[2]/a'.</msg>
+<status status="PASS" starttime="20231212 15:53:29.490" endtime="20231212 15:53:36.454"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath:/html/body/div[3]/div[3]/div/div/div/div/div/div/div/div/form/div[1]/input[1]</arg>
+<arg>${user_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231212 15:53:36.457" level="INFO">Typing text 'jackyjones@ethycadigital.com' into text field 'xpath:/html/body/div[3]/div[3]/div/div/div/div/div/div/div/div/form/div[1]/input[1]'.</msg>
+<status status="PASS" starttime="20231212 15:53:36.454" endtime="20231212 15:53:38.260"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>xpath:/html/body/div[3]/div[3]/div/div/div/div/div/div/div/div/form/div[1]/input[2]</arg>
+<arg>${invalid_password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20231212 15:53:38.261" level="INFO">Typing password into text field 'xpath:/html/body/div[3]/div[3]/div/div/div/div/div/div/div/div/form/div[1]/input[2]'.</msg>
+<msg timestamp="20231212 15:53:39.371" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20231212 15:53:40.000" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20231212 15:53:38.260" endtime="20231212 15:53:40.000"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>xpath:/html/body/div[3]/div[3]/div/div/div/div/div/div/div/div/form/div[2]/button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231212 15:53:40.001" level="INFO">Clicking button 'xpath:/html/body/div[3]/div[3]/div/div/div/div/div/div/div/div/form/div[2]/button'.</msg>
+<status status="PASS" starttime="20231212 15:53:40.000" endtime="20231212 15:53:47.688"/>
+</kw>
+<status status="PASS" starttime="20231212 15:53:29.489" endtime="20231212 15:53:47.688"/>
+</kw>
+<kw name="Wait until it checks and display error message">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Error_Message_Login}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231212 15:53:47.690" endtime="20231212 15:53:48.768"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.5</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20231212 15:53:48.769" endtime="20231212 15:53:48.770"/>
+</kw>
+<status status="PASS" starttime="20231212 15:53:47.689" endtime="20231212 15:53:48.771"/>
+</kw>
+<kw name="verify error message is correct">
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${Error_Message_Login}</arg>
+<arg>User name and password do not match</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20231212 15:53:48.775" level="INFO">Verifying element 'xpath:/html/body/div[3]/div[3]/div/div/div/div/div/div/div/div/div[1]' contains exact text 'User name and password do not match'.</msg>
+<status status="PASS" starttime="20231212 15:53:48.773" endtime="20231212 15:53:49.839"/>
+</kw>
+<status status="PASS" starttime="20231212 15:53:48.772" endtime="20231212 15:53:49.839"/>
+</kw>
+<kw name="Close Browser Session" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231212 15:53:49.841" endtime="20231212 15:53:53.603"/>
+</kw>
+<status status="PASS" starttime="20231212 15:53:49.840" endtime="20231212 15:53:53.603"/>
+</kw>
+<status status="PASS" starttime="20231212 15:53:15.693" endtime="20231212 15:53:53.604"/>
+</test>
+<status status="PASS" starttime="20231212 15:53:15.273" endtime="20231212 15:53:53.608"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="testDemo2">testDemo2</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
